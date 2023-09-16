@@ -1,0 +1,15 @@
+name: Wackrab
+version: 1.0
+author: Jackrabbit
+main: com.jackrabbit.wackrab.Main
+commands:
+  test:
+    description: Ceci est une commande de test
+    permission: test.use
+  wacktp:
+    description: wacktp
+    permission: tpworld.use
+  world:
+    description: Worlds Info (Wackrab Plugin)
+    usage: /world
+    permission: wackrab.world
