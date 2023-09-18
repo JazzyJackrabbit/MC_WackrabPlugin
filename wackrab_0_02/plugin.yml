@@ -1,0 +1,31 @@
+name: Wackrab
+version: 1.0
+author: Jackrabbit
+main: com.jackrabbit.wackrab.Main
+commands:
+  test:
+    description: Ceci est une commande de test
+    permission: test.use
+  wacktp:
+    description: wacktp
+    permission: tpworld.use
+  world:
+    description: Worlds Info (Wackrab Plugin)
+    usage: /world
+    permission: wackrab.world
+  h:
+    description: Help (Wackrab Plugin)
+    usage: /h
+    permission: wackrab.h
+  cmd:
+    description: Commande pour le monde /cmd [* ou nom du monde] [command]
+    permission: cmd.use
+  whereis:
+    description: Voir monde et position du joueur
+    permission: whereis.use
+  pathfrom:
+    description: Cheminement pour aller d'un monde à l'autre. [FROM] [TO]
+    permission: pathfrom.use
+  path:
+    description: Cheminement pour aller du monde présent à l'autre. [TO]
+    permission: path.use
