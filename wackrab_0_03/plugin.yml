@@ -1,0 +1,54 @@
+name: Wackrab
+version: 1.0
+author: Jackrabbit
+main: com.jackrabbit.wackrab.Main
+commands:
+  test:
+    description: Ceci est une commande de test
+    permission: test.use
+  wacktp:
+    description: wacktp
+    permission: wacktp.use
+  wackplayer:
+    description: wackplayer
+    permission: wackplayer.use
+  world:
+    description: Worlds Info (Wackrab Plugin)
+    usage: /world
+    permission: wackrab.world
+  h:
+    description: Help (Wackrab Plugin)
+    usage: /h
+    permission: wackrab.h
+  claim:
+    description: claim
+    usage: /claim
+    permission: claim.h
+  howto:
+    description: Help Howto (Wackrab Plugin)
+    usage: /howto
+    permission: howto.h
+  cmd:
+    description: Commande pour le monde /cmd [* ou nom du monde] [command]
+    permission: cmd.use
+  cloneworld:
+    description: cloneworld
+    permission: cloneworld.use
+  allowplayer:
+    description: allowplayer player level
+    usage: /allowplayer
+    permission: wackrab.allowplayer
+  gameruleworlds:
+    description: Commande pour le monde /cmd [* ou nom du monde] [command]
+    permission: gameruleworlds.use
+  whereis:
+    description: Voir monde et position du joueur
+    permission: whereis.use
+  pathfrom:
+    description: Cheminement pour aller d un monde a l autre [FROM] [TO]
+    usage: /pathfrom
+    permission: wackrab.pathfrom
+  path:
+    description: Cheminement pour aller du monde present a l autre [TO]
+    usage: /path
+    permission: wackrab.path

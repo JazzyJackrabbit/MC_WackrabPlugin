@@ -1,0 +1,82 @@
+package com.jackrabbit.wackrab;
+import java.util.ArrayList;
+
+import org.bukkit.World;
+import org.bukkit.entity.Player;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
+
+public class TimerPlayers {
+
+	ArrayList<TimePlayerRelation> timePlayers;
+	public Main main;
+	
+	public TimerPlayers() {
+		timePlayers = new ArrayList<TimePlayerRelation>();
+	}
+	
+	public TimePlayerRelation getPlayerRelation(Player player, Main main) {
+		
+		this.main = main;
+		
+		for(TimePlayerRelation tpr : timePlayers)
+			if(player.getName().equals(tpr.player.getName()))
+				return tpr;
+		
+		TimePlayerRelation timePlayerRelation = new TimePlayerRelation();
+		timePlayerRelation.timeCounter = 0;
+		timePlayerRelation.player = player;
+		timePlayers.add(timePlayerRelation);
+
+		return timePlayerRelation;
+	}
+	
+	public class TimePlayerRelation {
+
+		public Player player;
+		public World desiredWorld = null;
+		public int timeCounter = 8;
+		public boolean enableteleportmessage;
+		public boolean enableteleportmessage2 = true;
+		
+		public void reset() {
+			timeCounter = 8;
+			desiredWorld = null;
+			retirerNausee(player);
+		}
+		
+		public boolean count(Player p) {
+			
+			if(timeCounter > 8)
+				timeCounter = 8;
+			
+			if(timeCounter <= 8) {
+				donnerNausee(p, (8-timeCounter)/2); //p or player
+			}
+			
+			if(timeCounter > 0) {
+				timeCounter--;
+				p.sendMessage(timeCounter + "..");
+				return false;
+			}
+			else {
+				//timeCounter = 8;
+				//retirerNausee(player);
+				return true;
+			}
+		}
+		
+		void donnerNausee(Player joueur, int intensite) {
+		    PotionEffectType type = PotionEffectType.CONFUSION; // Type d'effet de nausée
+		    int duree = 8 * 20; 
+
+		    PotionEffect effetNausee = new PotionEffect(type, duree, intensite);
+		    joueur.addPotionEffect(effetNausee);
+		}
+		
+		void retirerNausee(Player joueur) {
+		    joueur.removePotionEffect(PotionEffectType.CONFUSION);
+		}
+	}
+
+}
